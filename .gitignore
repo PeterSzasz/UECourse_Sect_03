@@ -1,0 +1,15 @@
+##################
+# Unreal Related #
+##################
+*/Build
+*/Binaries
+*/DerivedDataCache
+*/Intermediate/
+*/Saved
+BuildingEscape/Content/StarterContent/
+
+
+####################
+# VS Related Files #
+####################
+*.VC.db
