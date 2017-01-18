@@ -73,5 +73,8 @@ BuildingEscape/DerivedDataCache/
 # Starter Content
 BuildingEscape/Content/StarterContent/
 
+# Folder for experimenting UE technics
+BuildingEscape/Content/Experimentation/
+
 # Windows generated file
 Thumbs.db
