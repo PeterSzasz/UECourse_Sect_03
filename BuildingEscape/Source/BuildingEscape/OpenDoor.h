@@ -18,21 +18,32 @@ public:
 	// Called when the game starts
 	virtual void BeginPlay() override;
 
-	// opens this door
+	// opens this door, ot the pre-set value
 	void OpenDoor();
 	
+	// fully closes this door
+	void CloseDoor();
+
 	// Called every frame
 	virtual void TickComponent( float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction ) override;
 
 		
 private:
-	UPROPERTY(VisibleAnywhere)
-	float OpenAngle = 60.f;
+	// the door that owns this script
+	AActor* Owner;
+
+	// the actor that opens the door
+	AActor* ActorThatOpens;
+
+	UPROPERTY(EditAnywhere)
+	float OpenAngle = 90.f;
 
 	UPROPERTY(EditAnywhere)
 	ATriggerVolume* PressurePlate;
+	
+	UPROPERTY(EditAnywhere)
+	float DoorCloseDelay = 0.2f;
 
-	AActor* ActorThatOpens;
+	float LastDoorOpenTime;
 
-	//UPROPERTY(EditAnywhere)
 };
