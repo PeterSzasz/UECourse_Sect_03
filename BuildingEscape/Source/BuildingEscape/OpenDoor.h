@@ -32,9 +32,6 @@ private:
 	// the door that owns this script
 	AActor* Owner;
 
-	// the actor that opens the door
-	AActor* ActorThatOpens;
-
 	UPROPERTY(EditAnywhere)
 	float OpenAngle = 90.f;
 
@@ -46,4 +43,5 @@ private:
 
 	float LastDoorOpenTime;
 
+	float GetTotalMassOfActorOnPlate();
 };

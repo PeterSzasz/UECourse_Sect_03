@@ -22,10 +22,31 @@ public:
 	virtual void TickComponent( float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction ) override;
 
 private:
-	// How far ahead of the player 
+	// How far ahead of the player can we reach in cm
 	float Reach = 100.f;
 	
-	// We can manipulate object through this handle
 	UPhysicsHandleComponent* PhysicsHandle = nullptr;
 
+	UInputComponent* PlayerInput = nullptr;
+
+	// Ray-cast and grab what's in reach
+	void Grab();
+
+	// Releasing the object that we grab earlier
+	void Release();
+
+	// Find (assume) attached physics handle
+	void FindPhysicsHandleComponent();
+
+	// Find (assume) attached input component
+	void SetupInputComponent();
+
+	// Return hit for first physics body in reach
+	const FHitResult GetFirstPhysicsBodyInReach();
+
+	// returns current start of reach line
+	FVector GetReachLineStart();
+
+	// returns current end of reach line
+	FVector GetReachLineEnd();
 };
